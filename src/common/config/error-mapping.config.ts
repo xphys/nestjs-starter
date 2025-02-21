@@ -13,5 +13,10 @@ export const errorMappings: { [key: string]: ErrorMapping } = {
     errorCode: ErrorCode.USER_NOT_FOUND,
     message: 'User not found',
   },
+  BadRequestException: {
+    status: HttpStatus.BAD_REQUEST,
+    errorCode: ErrorCode.BAD_REQUEST,
+    message: 'Bad request',
+  },
   // Add more error mappings as needed
 }; 

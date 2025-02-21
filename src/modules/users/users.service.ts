@@ -1,19 +1,14 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateUserDto, UpdateUserDto } from './dto/user.dto';
-import { UserNotFoundException } from '../common/exceptions/user-not-found.exception';
-
-export interface User {
-  id: number;
-  name: string;
-  email: string;
-  age: number;
-}
+import { UserNotFoundException } from '../../common/exceptions/user-not-found.exception';
+import { User } from '@/models/user.model';
 
 @Injectable()
 export class UsersService {
-  private users: User[] = [
-    { id: 1, name: 'John Doe', email: 'john@example.com', age: 25 },
-    { id: 2, name: 'Jane Smith', email: 'jane@example.com', age: 30 },
+  private users: any[] = [
+    { id: 1, name: 'John Doe', email: 'john@example.com', isActive: true, createdAt: new Date(), updatedAt: new Date() },
+    { id: 2, name: 'Jane Smith', email: 'jane@example.com', isActive: true, createdAt: new Date(), updatedAt: new Date() },
+    { id: 3, name: 'Bob Wilson', email: 'bob@example.com', isActive: false, createdAt: new Date(), updatedAt: new Date() }
   ];
 
   findAll(): User[] {
@@ -32,6 +27,9 @@ export class UsersService {
     const newUser = {
       id: this.users.length + 1,
       ...createUserDto,
+      isActive: true,
+      createdAt: new Date(),
+      updatedAt: new Date()
     };
     this.users.push(newUser);
     return newUser;
