@@ -20,7 +20,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@common/*": ["./src/common/*"],
-      "@models/*": ["./src/models/*"]
+      "@models/*": ["./src/models/*"],
+      "@modules/*": ["./src/modules/*"]
     }
   }
 }

@@ -1,11 +1,11 @@
 import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UsersModule } from './modules/users/users.module';
-import { ApiLoggerMiddleware } from './common/middleware/api-logger.middleware';
+import { UsersModule } from '@modules/users/users.module';
+import { ApiLoggerMiddleware } from '@common/middleware/api-logger.middleware';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from './models/user.model';
+import { User } from '@models/user.model';
 
 @Module({
   imports: [

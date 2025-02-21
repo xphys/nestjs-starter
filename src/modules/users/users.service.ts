@@ -1,6 +1,6 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { CreateUserDto, UpdateUserDto } from './dto/user.dto';
-import { UserNotFoundException } from '../../common/exceptions/user-not-found.exception';
+import { UserNotFoundException } from '@common/exceptions/user-not-found.exception';
 import { User } from '@/models/user.model';
 
 @Injectable()
