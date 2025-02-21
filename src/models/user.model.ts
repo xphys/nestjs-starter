@@ -1,17 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { TextColumn, BooleanColumn } from '@common/decorator/db.decorator';
 
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @TextColumn()
   name: string;
 
-  @Column({ unique: true })
+  @TextColumn()
   email: string;
 
-  @Column({ default: true })
+  @BooleanColumn()
   isActive: boolean;
 
   @CreateDateColumn()
@@ -19,4 +20,4 @@ export class User {
 
   @UpdateDateColumn()
   updatedAt: Date;
-} 
+}
